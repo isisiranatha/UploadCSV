@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UploadCSV.Models.CustomerUploadModel>
+
+@{
+    ViewBag.Title = "Result Page";
+}
+
+<div>
+    @ViewBag.Message
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            "Property"
+        </th>
+        <th>
+            "Customer"
+        </th>
+        <th>
+            "Action"
+        </th>
+        <th>
+            "File"
+        </th>
+        <th>
+            "Hash"
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.property)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.action)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.file)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hash)
+
+                </td>
+            </tr>
+        }
+    }
+</table>
